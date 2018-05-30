@@ -41,11 +41,11 @@ public class TensorFlow extends CordovaPlugin {
           this.classify(args.getString(0), args.getString(1), callbackContext);
           return true;
       } else {
+      */
           return false;
       }
-      */
+      /*
   }
-/*
   private Map<String,Classifier> classifiers = new HashMap();
   private Map<String,Integer> sizes = new HashMap();
 
