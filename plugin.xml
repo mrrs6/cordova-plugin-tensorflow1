@@ -8,6 +8,11 @@
     <license>MIT</license>
 
     <keywords>cordova,android,toast,message,alert</keywords>
+
+    <dependency id="cordova-plugin-file-transfer" />
+    <dependency id="cordova-plugin-zip" />
+
+
     <repo>https://github.com/mrrs6/cordova-plugin-tensorflow1.git</repo>
     <issue>https://github.com/mrrs6/cordova-plugin-tensorflow1/issues</issue>
 
@@ -19,7 +24,7 @@
         <clobbers target="TensorFlow" />
     </js-module>
     <platform name="TensorFlow">
-        <config-file target="res/xml/config.xml" parent="/*">
+        <config-file target="src/main/res/xml/config.xml" parent="/*">
             <feature name="TensorFlow">
                 <param name="android-package" value="io.wq.tensorflow.TensorFlow"/>
             </feature>
