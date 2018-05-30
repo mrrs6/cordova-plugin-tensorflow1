@@ -20,23 +20,23 @@
     </js-module>
     <platform name="TensorFlow">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="ToastyPlugin">
+            <feature name="TensorFlow">
                 <param name="android-package" value="io.wq.tensorflow.TensorFlow"/>
             </feature>
         </config-file>
 
-        <source-file src="src/android/ToastyPlugin.java" target-dir="src/io/tensorflow" />
+        <source-file src="src/android/TensorFlow.java" target-dir="src/io/wq/tensorflow" />
 
     </platform>
 
     <platform name="ios">
-            <config-file target="config.xml" parent="/*">
+            <config-file target="res/xml/config.xml" parent="/*">
                 <feature name="TensorFlow">
                     <param name="ios-package" value="TensorFlow" />
                 </feature>
             </config-file>
 
-            <framework type='podspec' src='TensorflowPod' spec=":podspec => 'https://raw.githubusercontent.com/heigeo/TensorflowPod/master/TensorflowPod.podspec'"/>
+            <framework type='podspec' src='TensorflowPod' spec=":podspec => 'https://raw.githubusercontent.com/mrrs6/TensorflowPod/master/TensorflowPod.podspec'"/>
 
             <header-file src="src/ios/TensorFlow.h" />
             <source-file src="src/ios/TensorFlow.mm" compiler-flags="-std=gnu++11" />
