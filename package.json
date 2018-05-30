@@ -5,7 +5,8 @@
   "cordova": {
     "id": "cordova-plugin-tensorflow1",
     "platforms": [
-      "android", "ios"
+      "android",
+      "ios"
     ]
   },
   "repository": {
