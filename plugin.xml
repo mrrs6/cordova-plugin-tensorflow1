@@ -7,6 +7,8 @@
     <description>A TF Cordova plugin.</description>
     <license>MIT</license>
 
+    merda lá para isto.
+
     <keywords>cordova,android,toast,message,alert</keywords>
 
     <dependency id="cordova-plugin-file-transfer" />

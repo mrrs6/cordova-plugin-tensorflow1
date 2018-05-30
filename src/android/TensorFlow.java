@@ -20,7 +20,7 @@ import java.util.Map;
 import java.util.HashMap;
 
 import android.media.ThumbnailUtils;
-
+ai que merda.
 public class TensorFlow extends CordovaPlugin {
   @Override
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {

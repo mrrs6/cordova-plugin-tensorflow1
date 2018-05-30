@@ -1,4 +1,3 @@
-/*
 function TensorFlow(modelId, model) {
     this.modelId = modelId;
     if (model) {
@@ -269,4 +268,3 @@ function fetchZip(model, callback, errorCallback, progressCallback) {
 
 TensorFlow._models = models;
 module.exports = TensorFlow;
-*/
