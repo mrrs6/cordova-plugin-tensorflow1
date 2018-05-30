@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-tensorflow1" version="1.0.0">
+    <name>TensorFlow for Cordova</name>
+
+    <description>A TF Cordova plugin.</description>
+    <license>MIT</license>
+
+    <keywords>cordova,android,toast,message,alert</keywords>
+    <repo>https://github.com/mrrs6/cordova-plugin-tensorflow1.git</repo>
+    <issue>https://github.com/mrrs6/cordova-plugin-tensorflow1/issues</issue>
+
+    <engines>
+        <engine name="cordova" version=">=8.0.0"/>
+    </engines>
+
+    <js-module src="www/tensorflow.js" name="tensorflow">
+        <clobbers target="TensorFlow" />
+    </js-module>
+    <platform name="TensorFlow">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="ToastyPlugin">
+                <param name="android-package" value="io.wq.tensorflow.TensorFlow"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/ToastyPlugin.java" target-dir="src/io/tensorflow" />
+
+    </platform>
+
+    <platform name="ios">
+            <config-file target="config.xml" parent="/*">
+                <feature name="TensorFlow">
+                    <param name="ios-package" value="TensorFlow" />
+                </feature>
+            </config-file>
+
+            <framework type='podspec' src='TensorflowPod' spec=":podspec => 'https://raw.githubusercontent.com/heigeo/TensorflowPod/master/TensorflowPod.podspec'"/>
+
+            <header-file src="src/ios/TensorFlow.h" />
+            <source-file src="src/ios/TensorFlow.mm" compiler-flags="-std=gnu++11" />
+
+            <header-file src="src/ios/tf_libs/tensorflow_utils.h" />
+            <source-file src="src/ios/tf_libs/tensorflow_utils.mm" compiler-flags="-std=gnu++11" />
+
+            <header-file src="src/ios/tf_libs/ios_image_load.h" />
+            <source-file src="src/ios/tf_libs/ios_image_load.mm" compiler-flags="-std=gnu++11" />
+
+    </platform>
+
+</plugin>
