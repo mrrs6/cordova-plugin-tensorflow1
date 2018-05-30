@@ -1,0 +1,33 @@
+{
+  "name": "cordova-plugin-tensorflow1",
+  "version": "1.0.0",
+  "description": "A TF Android Cordova plugin.",
+  "cordova": {
+    "id": "cordova-plugin-tensorflow1",
+    "platforms": [
+      "android", "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrrs6/cordova-plugin-tensorflow"
+  },
+  "keywords": [
+    "TensorFlow",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=8.0.0"
+    }
+  ],
+  "author": "JohnDoe (john@doe.net)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mrrs6/cordova-plugin-tensorflow1/issues"
+  },
+  "homepage": "https://github.com/mrrs6/cordova-plugin-tensorflow1/"
+}
