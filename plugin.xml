@@ -30,6 +30,8 @@
         </config-file>
 
         <source-file src="src/android/TensorFlow.java" target-dir="src/io/wq/tensorflow" />
+        <source-file src="src/android/tf_libs/TensorFlowImageClassifier.java" target-dir="src/org/tensorflow/demo" />
+        <source-file src="src/android/tf_libs/Classifier.java" target-dir="src/org/tensorflow/demo" />
 
     </platform>
 

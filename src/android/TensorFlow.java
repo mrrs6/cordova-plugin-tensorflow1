@@ -10,11 +10,9 @@ import android.util.Base64;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 import android.graphics.BitmapFactory;
-/*
 import org.tensorflow.demo.TensorFlowImageClassifier;
 import org.tensorflow.demo.Classifier.Recognition;
 import org.tensorflow.demo.Classifier;
-*/
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
@@ -44,7 +42,7 @@ public class TensorFlow extends CordovaPlugin {
       */
           return false;
       }
-      /*
+/*
   }
   private Map<String,Classifier> classifiers = new HashMap();
   private Map<String,Integer> sizes = new HashMap();
