@@ -6,9 +6,6 @@
 
     <description>A TF Cordova plugin.</description>
     <license>MIT</license>
-
-    merda lá para isto.
-
     <keywords>cordova,android,toast,message,alert</keywords>
 
     <dependency id="cordova-plugin-file-transfer" />
@@ -25,7 +22,7 @@
     <js-module src="www/tensorflow.js" name="tensorflow">
         <clobbers target="TensorFlow" />
     </js-module>
-    <platform name="TensorFlow">
+    <platform name="android">
         <config-file target="src/main/res/xml/config.xml" parent="/*">
             <feature name="TensorFlow">
                 <param name="android-package" value="io.wq.tensorflow.TensorFlow"/>
