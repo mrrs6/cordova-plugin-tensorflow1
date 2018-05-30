@@ -21,7 +21,6 @@ import android.media.ThumbnailUtils;
 public class TensorFlow extends CordovaPlugin {
   @Override
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-    /*
       if (action.equals("loadModel")) {
           this.loadModel(
               args.getString(0),
@@ -39,11 +38,10 @@ public class TensorFlow extends CordovaPlugin {
           this.classify(args.getString(0), args.getString(1), callbackContext);
           return true;
       } else {
-      */
           return false;
       }
-/*
   }
+
   private Map<String,Classifier> classifiers = new HashMap();
   private Map<String,Integer> sizes = new HashMap();
 
@@ -84,6 +82,5 @@ public class TensorFlow extends CordovaPlugin {
       }
       callbackContext.success(output);
   }
-*/
 
 }

@@ -28,12 +28,12 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Vector;
-/*
+
 import org.tensorflow.Operation;
 import org.tensorflow.contrib.android.TensorFlowInferenceInterface;
 
 /** A classifier specialized to label images using TensorFlow. */
-public class TensorFlowImageClassifier/* implements Classifier */{
+public class TensorFlowImageClassifier implements Classifier {
 
   private static final String TAG = "TensorFlowImageClassifier";
 
@@ -55,7 +55,7 @@ public class TensorFlowImageClassifier/* implements Classifier */{
   private float[] outputs;
   private String[] outputNames;
 
-/*  private TensorFlowInferenceInterface inferenceInterface;
+  private TensorFlowInferenceInterface inferenceInterface;
 
   private TensorFlowImageClassifier() {}
 
@@ -72,7 +72,7 @@ public class TensorFlowImageClassifier/* implements Classifier */{
    * @param outputName The label of the output node.
    * @throws IOException
    */
-  /*
+  
   public static Classifier create(
       AssetManager assetManager,
       String modelFilename,
@@ -218,5 +218,5 @@ public class TensorFlowImageClassifier/* implements Classifier */{
   public void close() {
     inferenceInterface.close();
   }
-  */
+  
 }

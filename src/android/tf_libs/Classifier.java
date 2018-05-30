@@ -44,14 +44,14 @@ public interface Classifier {
     private final Float confidence;
 
     /** Optional location within the source image for the location of the recognized object. */
-//    private RectF location;
+    private RectF location;
 
     public Recognition(
         final String id, final String title, final Float confidence, final RectF location) {
       this.id = id;
       this.title = title;
       this.confidence = confidence;
-//      this.location = location;
+      this.location = location;
     }
 
     public String getId() {
@@ -61,7 +61,7 @@ public interface Classifier {
     public String getTitle() {
       return title;
     }
-/*
+
     public Float getConfidence() {
       return confidence;
     }
@@ -95,10 +95,10 @@ public interface Classifier {
 
       return resultString.trim();
     }
-    */
+
   }
 
-//  List<Recognition> recognizeImage(Bitmap bitmap);
+  List<Recognition> recognizeImage(Bitmap bitmap);
 
   void enableStatLogging(final boolean debug);
   
