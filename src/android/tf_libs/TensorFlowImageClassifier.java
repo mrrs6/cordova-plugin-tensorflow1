@@ -19,6 +19,7 @@ import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.os.Trace;
 import android.util.Log;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -31,6 +32,9 @@ import java.util.Vector;
 
 import org.tensorflow.Operation;
 import org.tensorflow.contrib.android.TensorFlowInferenceInterface;
+
+import java.net.URL;
+import java.net.URISyntaxException;
 
 /** A classifier specialized to label images using TensorFlow. */
 public class TensorFlowImageClassifier implements Classifier {
@@ -72,7 +76,7 @@ public class TensorFlowImageClassifier implements Classifier {
    * @param outputName The label of the output node.
    * @throws IOException
    */
-  
+
   public static Classifier create(
       AssetManager assetManager,
       String modelFilename,
@@ -87,13 +91,12 @@ public class TensorFlowImageClassifier implements Classifier {
     c.outputName = outputName;
 
     // Read the label names into memory.
-    // TODO(andrewharp): make this handle non-assets.
-    final boolean hasAssetPrefix = labelFilename.startsWith("file:///android_asset/");
-    String actualFilename = hasAssetPrefix ? labelFilename.split("file:///android_asset/")[1] : labelFilename;
+    boolean hasAssetPrefix = labelFilename.startsWith("/");
+    String actualFilename = hasAssetPrefix ? (new File(labelFilename)).getName() : labelFilename;
     Log.i(TAG, "Reading labels from: " + actualFilename);
     BufferedReader br = null;
     try {
-      br = new BufferedReader(new InputStreamReader(assetManager.open(actualFilename)));
+      br = new BufferedReader(new InputStreamReader(assetManager.open("www/tfmodels/" + actualFilename)));
       String line;
       while ((line = br.readLine()) != null) {
         c.labels.add(line);
@@ -115,8 +118,10 @@ public class TensorFlowImageClassifier implements Classifier {
       }
     }
 
+    hasAssetPrefix = modelFilename.startsWith("/");
+    actualFilename = hasAssetPrefix ? (new File(modelFilename)).getName() : modelFilename;
     c.inferenceInterface = new TensorFlowInferenceInterface();
-    if (c.inferenceInterface.initializeTensorFlow(assetManager, modelFilename) != 0) {
+    if (c.inferenceInterface.initializeTensorFlow(assetManager, "www/tfmodels/" + actualFilename) != 0) {
       throw new RuntimeException("TF initialization failed");
     }
     // The shape of the output is [N, NUM_CLASSES], where N is the batch size.
@@ -218,5 +223,4 @@ public class TensorFlowImageClassifier implements Classifier {
   public void close() {
     inferenceInterface.close();
   }
-  
 }
